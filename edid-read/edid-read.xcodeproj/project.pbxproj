@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A98A734E2992107000A90CD6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A734D2992107000A90CD6 /* main.swift */; };
 		A98A73642994BC6E00A90CD6 /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A73632994BC6E00A90CD6 /* BaseBlock.swift */; };
+		A9ADE0FD2994D31C0086A7C3 /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A73632994BC6E00A90CD6 /* BaseBlock.swift */; };
+		A9ADE0FF2994D32A0086A7C3 /* BaseBlockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADE0FE2994D32A0086A7C3 /* BaseBlockTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +29,19 @@
 		A98A734A2992107000A90CD6 /* edid-read */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "edid-read"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98A734D2992107000A90CD6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A98A73632994BC6E00A90CD6 /* BaseBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBlock.swift; sourceTree = "<group>"; };
+		A9ADE0F62994D3160086A7C3 /* edid-read Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "edid-read Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9ADE0FE2994D32A0086A7C3 /* BaseBlockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBlockTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A98A73472992107000A90CD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9ADE0F32994D3160086A7C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A98A734C2992107000A90CD6 /* edid-read */,
+				A9ADE0F72994D3160086A7C3 /* edid-read Tests */,
 				A98A734B2992107000A90CD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A98A734A2992107000A90CD6 /* edid-read */,
+				A9ADE0F62994D3160086A7C3 /* edid-read Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +77,14 @@
 				A98A73632994BC6E00A90CD6 /* BaseBlock.swift */,
 			);
 			path = "edid-read";
+			sourceTree = "<group>";
+		};
+		A9ADE0F72994D3160086A7C3 /* edid-read Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A9ADE0FE2994D32A0086A7C3 /* BaseBlockTest.swift */,
+			);
+			path = "edid-read Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +107,23 @@
 			productReference = A98A734A2992107000A90CD6 /* edid-read */;
 			productType = "com.apple.product-type.tool";
 		};
+		A9ADE0F52994D3160086A7C3 /* edid-read Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9ADE0FC2994D3160086A7C3 /* Build configuration list for PBXNativeTarget "edid-read Tests" */;
+			buildPhases = (
+				A9ADE0F22994D3160086A7C3 /* Sources */,
+				A9ADE0F32994D3160086A7C3 /* Frameworks */,
+				A9ADE0F42994D3160086A7C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "edid-read Tests";
+			productName = "edid-read Tests";
+			productReference = A9ADE0F62994D3160086A7C3 /* edid-read Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +135,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					A98A73492992107000A90CD6 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					A9ADE0F52994D3160086A7C3 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -115,9 +156,20 @@
 			projectRoot = "";
 			targets = (
 				A98A73492992107000A90CD6 /* edid-read */,
+				A9ADE0F52994D3160086A7C3 /* edid-read Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9ADE0F42994D3160086A7C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A98A73462992107000A90CD6 /* Sources */ = {
@@ -126,6 +178,15 @@
 			files = (
 				A98A73642994BC6E00A90CD6 /* BaseBlock.swift in Sources */,
 				A98A734E2992107000A90CD6 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9ADE0F22994D3160086A7C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9ADE0FD2994D31C0086A7C3 /* BaseBlock.swift in Sources */,
+				A9ADE0FF2994D32A0086A7C3 /* BaseBlockTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +328,36 @@
 			};
 			name = Release;
 		};
+		A9ADE0FA2994D3160086A7C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R7A9796S7S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlw.edid-read-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A9ADE0FB2994D3160086A7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R7A9796S7S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlw.edid-read-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +375,15 @@
 			buildConfigurations = (
 				A98A73522992107000A90CD6 /* Debug */,
 				A98A73532992107000A90CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9ADE0FC2994D3160086A7C3 /* Build configuration list for PBXNativeTarget "edid-read Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9ADE0FA2994D3160086A7C3 /* Debug */,
+				A9ADE0FB2994D3160086A7C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
