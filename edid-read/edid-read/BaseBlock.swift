@@ -30,6 +30,16 @@ class BaseBlock {
     var vertical_screen_size: UInt8
     var display_transfer_characteristic: UInt8
     var feature_support: UInt8
+    // Color Characteristics
+    var red_x: UInt16
+    var red_y: UInt16
+    var green_x: UInt16
+    var green_y: UInt16
+    var blue_x: UInt16
+    var blue_y: UInt16
+    var white_x: UInt16
+    var white_y: UInt16
+    // Established Timings
     
     
     // Initializer
@@ -58,5 +68,14 @@ class BaseBlock {
         self.vertical_screen_size = block[22]
         self.display_transfer_characteristic = block[23]
         self.feature_support = block[24]
+        
+        self.red_x = (UInt16(block[25] & 0xC0) >> 6) + (UInt16(block[27]) << 2)
+        self.red_y = (UInt16(block[25] & 0x30) >> 6) + (UInt16(block[28]) << 2)
+        self.green_x = (UInt16(block[25] & 0x0C) >> 6) + (UInt16(block[29]) << 2)
+        self.green_y = (UInt16(block[25] & 0x03) >> 6) + (UInt16(block[30]) << 2)
+        self.blue_x = (UInt16(block[26] & 0xC0) >> 6) + (UInt16(block[31]) << 2)
+        self.blue_y = (UInt16(block[26] & 0x30) >> 6) + (UInt16(block[32]) << 2)
+        self.white_x = (UInt16(block[26] & 0x0C) >> 6) + (UInt16(block[33]) << 2)
+        self.white_y = (UInt16(block[26] & 0x03) >> 6) + (UInt16(block[34]) << 2)
     }
 }
