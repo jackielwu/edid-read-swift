@@ -24,6 +24,9 @@
 		A96C732829986B1A00121538 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = A96C732729986B1A00121538 /* ArgumentParser */; };
 		A96C7329299873C400121538 /* edid_read_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* edid_read_swift.swift */; };
 		A96C732E299878BF00121538 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = A96C732D299878BF00121538 /* ArgumentParser */; };
+		A96C734E299886D000121538 /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C734D299886D000121538 /* BaseBlock.swift */; };
+		A96C734F299886D000121538 /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C734D299886D000121538 /* BaseBlock.swift */; };
+		A96C7351299886FE00121538 /* BaseBlockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C7350299886FE00121538 /* BaseBlockTest.swift */; };
 		OBJ_22 /* edid_read_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* edid_read_swift.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* edid_read_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* edid_read_swiftTests.swift */; };
@@ -47,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A96C734D299886D000121538 /* BaseBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBlock.swift; sourceTree = "<group>"; };
+		A96C7350299886FE00121538 /* BaseBlockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBlockTest.swift; sourceTree = "<group>"; };
 		OBJ_12 /* edid_read_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edid_read_swiftTests.swift; sourceTree = "<group>"; };
 		OBJ_16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* edid_read_swiftTests.swift */,
+				A96C7350299886FE00121538 /* BaseBlockTest.swift */,
 			);
 			name = "edid-read-swiftTests";
 			path = "Tests/edid-read-swiftTests";
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* edid_read_swift.swift */,
+				A96C734D299886D000121538 /* BaseBlock.swift */,
 			);
 			name = "edid-read-swift";
 			path = "Sources/edid-read-swift";
@@ -228,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				A96C734E299886D000121538 /* BaseBlock.swift in Sources */,
 				OBJ_22 /* edid_read_swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				A96C7351299886FE00121538 /* BaseBlockTest.swift in Sources */,
+				A96C734F299886D000121538 /* BaseBlock.swift in Sources */,
 				OBJ_40 /* edid_read_swiftTests.swift in Sources */,
 				A96C7329299873C400121538 /* edid_read_swift.swift in Sources */,
 			);
