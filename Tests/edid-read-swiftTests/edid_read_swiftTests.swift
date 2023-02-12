@@ -22,4 +22,12 @@ extension edid_read_swiftTests {
         ])
         XCTAssertEqual(edid.value, value)
     }
+    
+    func testDefault() throws {
+        let value = "bar"
+        let foo = try parse(EDIDRead.self, [
+            value
+        ])
+        XCTAssertNoThrow(try foo.run())
+    }
 }
