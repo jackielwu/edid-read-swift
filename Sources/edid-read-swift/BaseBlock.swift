@@ -7,16 +7,21 @@
 
 import Foundation
 
-enum InitializationError: Error {
+enum InitializationError: Error, Equatable {
     case invalidSize
     case invalidHeader
+    case reservedField(String)
+}
+
+func compressedASCII(number: UInt8) -> Character {
+    return Character(UnicodeScalar(Character("A").asciiValue! + number))
 }
 
 class BaseBlock {
     // Header
     var header: [UInt8]
     // Vendor & Product Identification
-    var id_manufacturer_name: [UInt8]
+    var id_manufacturer_name: String
     var id_product_code: [UInt8]
     var id_serial_number: [UInt8]
     var week_of_manufacture: UInt8
@@ -54,7 +59,11 @@ class BaseBlock {
         else {
             throw InitializationError.invalidHeader
         }
-        self.id_manufacturer_name = Array(block[8...9])
+        // Check bit 7 reserved
+        if block[8] & 0x80 != 0 {
+            throw InitializationError.reservedField("ID Manufacturer Name Byte 1 bit 7 reserved!")
+        }
+        self.id_manufacturer_name = "\(compressedASCII(number: block[8] & 0x7C >> 2))\(compressedASCII(number: block[8] & 0x03 << 3 + block[9] & 0xE0 >> 5))\(compressedASCII(number: block[9] & 0x1F))"
         self.id_product_code = Array(block[10...11])
         self.id_serial_number = Array(block[12...15])
         self.week_of_manufacture = block[16]
