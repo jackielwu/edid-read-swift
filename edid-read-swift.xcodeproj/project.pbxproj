@@ -75,13 +75,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A96C732C299878BF00121538 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +109,6 @@
 				OBJ_10 /* Tests */,
 				OBJ_13 /* Products */,
 				OBJ_16 /* README.md */,
-				A96C732C299878BF00121538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
