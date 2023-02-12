@@ -15,7 +15,7 @@ extension edid_read_swiftTests {
 //    }
     // Should throw CommandError.parsingerror
 
-    func testParsingPingVerbose() throws {
+    func testParsing() throws {
         let value = "Hello, World!"
         let edid = try parse(EDIDRead.self, [
             value
