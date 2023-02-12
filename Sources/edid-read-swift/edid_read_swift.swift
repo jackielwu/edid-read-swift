@@ -1,8 +1,11 @@
-@main
-public struct edid_read_swift {
-    public private(set) var text = "Hello, World!"
+import ArgumentParser
 
-    public static func main() {
-        print(edid_read_swift().text)
+@main
+struct EDIDRead: ParsableCommand {
+    @Argument()
+    var value: String
+    func run() throws {
+        print(value)
     }
 }
+
