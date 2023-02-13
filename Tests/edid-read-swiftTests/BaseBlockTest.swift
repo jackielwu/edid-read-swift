@@ -60,7 +60,7 @@ final class BaseBlockTest: XCTestCase {
                     0x2a, 0x40, 0x30, 0x70, 0x13, 0x00, 0x40, 0xf0, 0x10, 0x00, 0x00, 0x1e, 0xea, 0x24, 0x00, 0x60,
                     0x41, 0x00, 0x28, 0x30, 0x30, 0x60, 0x13, 0x00, 0x40, 0xf0, 0x10, 0x00, 0x00, 0x1e, 0x00, 0xfb]
         XCTAssertNoThrow(try baseblock = BaseBlock(block: edid))
-        let id_manufacturer_name = "UQY"
+        let id_manufacturer_name = "MAX"
         XCTAssertEqual(baseblock.id_manufacturer_name, id_manufacturer_name)
     }
     
@@ -80,10 +80,11 @@ final class BaseBlockTest: XCTestCase {
         }
         XCTAssertEqual(expectedError, error)
     }
-}
-
-func testCompressedASCII() {
-    for index in 0...26 {
-        XCTAssertEqual(compressedASCII(number: UInt8(index)), Character(UnicodeScalar(index)!))
+    
+    func testCompressedASCII() {
+        let alphabet: [Character] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        for index in 1...26 {
+            XCTAssertEqual(compressedASCII(number: UInt8(index)), alphabet[index - 1])
+        }
     }
 }

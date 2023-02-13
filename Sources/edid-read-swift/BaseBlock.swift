@@ -14,7 +14,15 @@ enum InitializationError: Error, Equatable {
 }
 
 func compressedASCII(number: UInt8) -> Character {
-    return Character(UnicodeScalar(Character("A").asciiValue! + number))
+    return Character(UnicodeScalar(UInt8(("A" as UnicodeScalar).value) + number - 1))
+}
+
+func convertUInt32(nums: [UInt8]) -> UInt32 {
+    var ans: UInt32 = 0
+    for num in nums {
+        ans = (ans << 8) + UInt32(num)
+    }
+    return ans
 }
 
 class BaseBlock {
@@ -23,7 +31,7 @@ class BaseBlock {
     // Vendor & Product Identification
     var id_manufacturer_name: String
     var id_product_code: [UInt8]
-    var id_serial_number: [UInt8]
+    var id_serial_number: UInt32
     var week_of_manufacture: UInt8
     var year_of_manufacture: UInt8
     // EDID Structure Version & Revision
@@ -63,9 +71,9 @@ class BaseBlock {
         if block[8] & 0x80 != 0 {
             throw InitializationError.reservedField("ID Manufacturer Name Byte 1 bit 7 reserved!")
         }
-        self.id_manufacturer_name = "\(compressedASCII(number: block[8] & 0x7C >> 2))\(compressedASCII(number: block[8] & 0x03 << 3 + block[9] & 0xE0 >> 5))\(compressedASCII(number: block[9] & 0x1F))"
+        self.id_manufacturer_name = "\(compressedASCII(number: (block[8] & 0x7C) >> 2))\(compressedASCII(number: (block[8] & 0x03) << 3 + (block[9] & 0xE0) >> 5))\(compressedASCII(number: block[9] & 0x1F))"
         self.id_product_code = Array(block[10...11])
-        self.id_serial_number = Array(block[12...15])
+        self.id_serial_number = convertUInt32(nums: Array(block[12...15]))
         self.week_of_manufacture = block[16]
         self.year_of_manufacture = block[17]
         
