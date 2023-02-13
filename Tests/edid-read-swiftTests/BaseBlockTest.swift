@@ -62,6 +62,8 @@ final class BaseBlockTest: XCTestCase {
         XCTAssertNoThrow(try baseblock = BaseBlock(block: edid))
         let id_manufacturer_name = "MAX"
         XCTAssertEqual(baseblock.id_manufacturer_name, id_manufacturer_name)
+        let id_product_code: UInt16 = 3010
+        XCTAssertEqual(baseblock.id_product_code, id_product_code)
     }
     
     func test_reserve_id_manufacturer() throws {
