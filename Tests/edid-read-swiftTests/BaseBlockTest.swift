@@ -64,6 +64,8 @@ final class BaseBlockTest: XCTestCase {
         XCTAssertEqual(baseblock.id_manufacturer_name, id_manufacturer_name)
         let id_product_code: UInt16 = 3010
         XCTAssertEqual(baseblock.id_product_code, id_product_code)
+        let id_serial_number: UInt32 = 497
+        XCTAssertEqual(baseblock.id_serial_number, id_serial_number)
     }
     
     func test_reserve_id_manufacturer() throws {

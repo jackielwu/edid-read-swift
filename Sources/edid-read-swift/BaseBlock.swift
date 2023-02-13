@@ -19,8 +19,8 @@ func compressedASCII(number: UInt8) -> Character {
 
 func convertUInt32(nums: [UInt8]) -> UInt32 {
     var ans: UInt32 = 0
-    for num in nums {
-        ans = (ans << 8) + UInt32(num)
+    for index in stride(from: nums.count-1, through: 0, by: -1) {
+        ans = (ans << 8) + UInt32(nums[index])
     }
     return ans
 }
